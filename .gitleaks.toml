@@ -1,0 +1,15 @@
+# Gitleaks config — CRS OmnionPrime
+# Estende as regras padrão e adiciona allowlist para falsos positivos conhecidos.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Falsos positivos conhecidos"
+regexes = [
+  # client_id OAuth PÚBLICO do Claude Code (não é secret — embutido no CLI oficial)
+  '''9d1c250a-e61b-44d9-88ed-5944d1962f5e''',
+]
+paths = [
+  # placeholders de tutorial (cr_xxxx, sk-ant-sid01-xxxxx) — não são credenciais
+  '''web/admin-spa/src/components/.*\.vue''',
+]

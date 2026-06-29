@@ -1,0 +1,38 @@
+# ── Dependencies / build caches ──────────────────────────────
+node_modules/
+**/node_modules/
+.npm/
+.eslintcache
+
+# ── Secrets / runtime data (NUNCA commitar) ──────────────────
+.env
+.env.*
+!.env.example
+!**/.env.example
+!**/.env.production
+config/config.js            # gerado a partir de config.example.js; pode receber secrets
+data/init.json              # admin user + hash (PII/secret)
+data/*.db
+data/*.sqlite*
+data/sessions/
+data/oauth/
+*.key
+*.pem
+*.p12
+
+# ── Dados regeneráveis / grandes ─────────────────────────────
+data/model_pricing.json
+data/model_pricing.sha256
+logs/
+temp/
+*.log
+
+# ── Binários de ferramentas (regeneráveis) ───────────────────
+git-cliff-*/
+git-cliff-*.tar.gz
+
+# ── OS / editor ──────────────────────────────────────────────
+.DS_Store
+*.swp
+.idea/
+.vscode/
